@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robert Zamora</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav"></div>
+    </header>
+    <!--Personal Introduction with name description and picture, may include widget-->
+    <div class="intro">
+      <div id="introtext" style="border-radius: 20px;">
+        <h2 id="greeting"></h2>
+        <script>
+          rand = Math.floor(Math.random() * 3)
+          const greet = (phrase) => 
+            {document.getElementById('greeting').innerHTML = phrase}
+          switch (rand) {
+            case 0: greet("hello, it's"); break;
+            case 1: greet("welcome back to"); break;
+            case 2: greet("okay well it's"); break;
+            default: greet('code is not working at');
+          }
+        </script>
+        <h1>Robert<br>Zamora</h1>
+        <p>Developer, Photographer, Musician, Analyst, Filmmaker, Designer</p>
+      </div>
+      <div class="picture">
+        <div id="pointertrace" style="position: relative; top: 0; left: 0;">
+          <svg height="300px" width = '100%' style=" z-index: 0; position: relative; top: 0px; left: 0px;">
+            <circle cx='50%' cy='50%' r="50%" fill="rgb(231, 240, 221)" />
+          </svg>
+          <img src="./src/assets/Eye Track/lower layer.png" height="360px" style="z-index: 1; position: absolute; top: -45px; left: -22px;"/>
+          <img src="./src/assets/Eye Track/top layer.png" height="360px" style="z-index: 3; position: absolute; top: -45px; left: -22px;"/>
+        </div>
+      </div>
+      
+    </div>
+    <!-- section to describle places where I've applied-->
+    <hr width="30%" style="opacity: 60%; margin-top: 30px;">
+    <p class="jobApplied" style="font-weight: 200; font-size: 8pt;">I've Applied to</p>
+    <h3 class="jobApplied" style="font-size: 16pt; margin-bottom: 13pt; font-weight: 300;"><strong>Jobs at the Following Companies:</strong></h3>
+    <div class="companies">
+      <a href=""> <img class="icon" src="./src/assets/Logos/Boston_Consulting_Group_2020_logo.svg"/> </a>
+      <a href=""> <img class="icon" src="./src/assets/Logos/Capital_One_logo.svg"/> </a>
+      <a href=""> <img class="icon" src="./src/assets/Logos/mck.svg"/> </a>
+      <a href=""> <img class="icon" src="./src/assets/Logos/Goldman_Sachs.svg"/> </a>
+      <a href=""> <img class="icon" src="./src/assets/Logos/Jane_Street_Capital_Logo.svg" /> </a>
+      <a href=""> <img class="icon" src="./src/assets/Logos/McDonalds_Logo_1968.svg" /> </a>
+      <a href=""> <img class="icon" src="./src/assets/Logos/Wells_Fargo_Logo_(2020).svg" /> </a>
+      <a href=""> <img class="icon" src="./src/assets/Logos/Spotify_logo_with_text.svg" /> </a>
+      <a href=""> <img class="icon" src="./src/assets/Logos/IMAX logo (blue).svg"/> </a>
+      <a href=""> <img class="icon" src="./src/assets/Logos/Nationwide_Insurance.svg"/> </a>
+      <a href=""> <img class="icon" src="./src/assets/Logos/PNClogo.svg" /> </a>
+      <a href=""> <img class="icon" src="./src/assets/Logos/Chase_logo_2007.svg" /> </a>
+
+    </div>
+    <!--<p class="jobApplied">And Many More!!</p>-->
+    <hr width="30%" style="opacity: 60%; margin-top: 30px;">
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--Section with sankey diagram regarding unemployment-->
+    <div class="unemploymentTracker">
+      <h2 style="line-height: 11.5pt;"><span style="text-orientation:sideways-right; font-size: 7pt;">nearly</span><br><span style="color: rgb(243, 68, 65);">LIVE</span> UNEMPLOYMENT TRACKER</h2>
+      <div id="unempFig">
+        <script type="javascript" src="./src/Sankey.js"></script>
+        <!-- Sankey Diagram Loader-->
+        <script>
+          google.charts.load('current', {'packages':['sankey']});
+          google.charts.setOnLoadCallback(drawChart);
+
+          function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'From');
+            data.addColumn('string', 'To');
+            data.addColumn('number', 'Weight');
+            data.addRows([
+              [ 'Applications', ' ', 5 ],
+              [ ' ', 'Still no Response', 5],
+              //[ 'Still no Response', 'still nothing', 5],
+              [ 'Applications', 'Contacted', 5 ],
+              [ 'Contacted', 'Rejected', 3 ],
+              [ 'Contacted', 'Interview', 2 ],
+              [ 'Interview', 'Rejected', 1],
+              [ 'Interview', 'Offer', 1]
+            ]);
+
+            // Sets chart options.
+            var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
+                      '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
+
+            var options = {
+              sankey: {
+                node: {
+                  colors: colors, 
+                  nodePadding:10,
+                  iterations: 10,
+                },
+                link: {
+                  colorMode: 'gradient',
+                  colors: colors
+                }
+              }
+            };
+
+            // Instantiates and draws our chart, passing in some options.
+            var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+            chart.draw(data, options);
+          }
+        </script>
+        <div id="sankey_basic" style="width: auto; height: auto; margin: auto;"></div>
+        <p id="update">Source: my life (Last Updated on <span id="date">September 10, 2023</span>)</p>
+      </div>
+      
+    </div>
+    <!-- resume creator widget-->
+    <div class="resumeWidget">
+      <div class="prompt">
+        <h3>Recruiters! Tired of applicants who lack the fundamental 
+          skills to perform the basic duties of the job? me too. Type a list of 
+          skills necessary to perform your job!</h3>
+
+      </div>
+      <div class="resume">
+        <h3>The heck</h3>
+      </div>
+    </div>
+  </body>
+</html>

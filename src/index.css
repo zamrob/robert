@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+#sankey {
+  width:auto;
+  height: auto;
+}
+
+@font-face {
+  font-family: 'Softers';
+  src: url('./assets/Softers/Softers.woff2') format('woff2'),
+      url('./assets/Softers/Softers.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: 'Ranille';
+  src: url('./assets/Ranille/RanilleNormal-Regular.woff2') format('woff2'),
+      url('./assets/Ranille/RanilleNormal-Regular.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+
+}
+
+
+
+
+body {
+  background: #093028;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #237A57, #093028);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #237A57, #093028); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  font-family:'Inter';
+}
+
+#sankey_basic {
+  background-color: rgb(187, 234, 238);
+  padding: 20px;
+  border-radius: 5px;
+  width: auto;
+  margin: auto;
+  overflow: scroll;
+}
+
+.intro {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  column-gap: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+#introtext {
+  display: flex;
+  flex-direction: column;
+  justify-self:end;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  line-height: 5px;
+  color: honeydew;
+}
+
+
+.intro h1 {
+  font-family: 'Ranille';
+  line-height: 53pt;
+  font-size: 65pt;
+  color:rgb(255, 255, 255);
+  letter-spacing: 0.1px;
+  margin: 0;
+  padding: 0;
+}
+
+.unemploymentTracker {
+  background-color: honeydew;
+  border-radius: 10px;
+  padding: 1px 50px;
+  margin: 50px auto auto;
+  width: 50%;
+  max-width: 600px;
+  height: auto;
+}
+
+#update {
+  font-size: 8pt;
+  font-style: italic;
+  color: rgb(143, 151, 143);
+}
+
+.resumeWidget {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  visibility: hidden;
+}
+
+.resume {
+  background-color: aliceblue;
+}
+
+.prompt {
+  background-color: darkgoldenrod;
+}
+
+.companies {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  justify-content: center;
+  margin: auto ;
+}
+
+.icon {
+  fill: honeydew;
+  height: 30px;
+  opacity: 40%;
+  margin: auto 20px;
+}
+
+.jobApplied {
+  color: honeydew;
+  opacity: 40%;
+  text-align: center; 
+  font-style: italic; 
+  font-size: 10pt;
+  margin: 2pt;
+}
