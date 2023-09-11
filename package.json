@@ -2,7 +2,7 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://robzam.github.io/home",
+  "homepage": "https://zamrob.github.io/robert",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
